@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-//builder.Services.AddSingleton<ITransactionService, TransactionService>();
+builder.Services.AddSingleton<ITransactionService, TransactionService>();
 
 var app = builder.Build();
 

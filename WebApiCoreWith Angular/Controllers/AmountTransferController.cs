@@ -10,19 +10,19 @@ namespace WebApiCoreWith_Angular.Controllers
     [ApiController]
     public class AmountTransferController : ControllerBase
     {
-        //public readonly ITransactionService _transactionService;
-        //public AmountTransferController(ITransactionService transactionService)
-        //{
-        //    _transactionService = transactionService;
-        //}
+        public readonly ITransactionService _transactionService;
+        public AmountTransferController(ITransactionService transactionService)
+        {
+            _transactionService = transactionService;
+        }
         [HttpPost("Transferamount")]
         public ActionResult<string> Transferamount([FromBody] AccountModel accountModel)
         {
-            //return _transactionService.Transferamount(senderid: accountModel.iAid, amount: accountModel.dBalance , recipenitid : accountModel.recipenitid);
+            return _transactionService.Transferamount(senderid: accountModel.iAid, amount: accountModel.dBalance , recipenitid : accountModel.recipenitid);
             //ISTransactionService a = new STransactionService();
             //return a.Transferamount(senderid: accountModel.iAid, amount: accountModel.dBalance, recipenitid: accountModel.recipenitid);
-            TransactionService a = new TransactionService();
-            return a.Transferamount(senderid: accountModel.iAid, amount: accountModel.dBalance, recipenitid: accountModel.recipenitid);
+            //TransactionService a = new TransactionService();
+            //return a.Transferamount(senderid: accountModel.iAid, amount: accountModel.dBalance, recipenitid: accountModel.recipenitid);
         }
     }
 }
